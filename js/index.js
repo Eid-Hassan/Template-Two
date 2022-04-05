@@ -10,7 +10,9 @@ setInterval(() => {
 
     // Change Background Image Url
     landingPage.style.backgroundImage = 'url("../img/' + imgsArray[randomNumber] + '")';
-}, 10000 );
+}, 3000);
+
+
 
 
 let span = document.querySelector( ".up" );
@@ -30,20 +32,22 @@ span.onclick = function ()
 
 
 
-let tabs = document.querySelectorAll( ".tabs li" );
-let tabsArray = Array.from( tabs );
-let divs = document.querySelectorAll( ".content > div" );
-let divsArray = Array.from( divs );
+let tabs = document.querySelectorAll( ".tabs li" ),
+    divs = Array.from( document.querySelectorAll( ".content > div" ) );
 
-tabsArray.forEach( ( ele ) => {
-    ele.addEventListener( "click", function ( e ){
-        tabsArray.forEach( ( ele ) =>{
-            ele.classList.remove( "active" );
+tabs.forEach( ( li ) => {
+    li.addEventListener( "click", function removeActive() {
+        tabs.forEach( ( li ) => {
+            li.classList.remove( "active" );
+            this.classList.add( "active" );
         } );
-        e.currentTarget.classList.add( "active" );
-        divsArray.forEach( ( div ) =>{
-            div.style.display = 'none';
-        } );
-        document.querySelector( e.currentTarget.dataset.cont ).style.display = "flex";
     } );
-})
+    li.addEventListener( "click", function manageDivs() {
+        divs.forEach( ( div ) => {
+            div.style.display = "none";
+        } );
+        document.querySelectorAll( this.dataset.cont ).forEach( ( el ) => {
+            el.style.display = "flex";
+        } );
+    } );
+});
