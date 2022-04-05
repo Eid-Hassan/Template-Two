@@ -337,6 +337,7 @@ header nav .form i{
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
+.portfolio .content>div:not(:first-child) {display: none;}
 .portfolio .shuffle{display: flex;justify-content: center;}
 .portfolio .shuffle li{transition: 0.3s;padding: 10px;}
 .portfolio .shuffle li.active{
@@ -353,9 +354,7 @@ header nav .form i{
 .portfolio .images{display: flex;flex-wrap: wrap;margin-top: 60px;}
 .portfolio .images .box{overflow: hidden;position: relative;}
 .portfolio .images .box:hover .caption{bottom: 0;}
-.portfolio .images .box:hover img{
-    transform: rotate(360deg) scale(1.1);
-}
+.portfolio .images .box:hover img{transform: rotate(3deg) scale(1.2);}
 @media (min-width: 768px){
     .portfolio .images .box{flex-basis: 50%;}
 }
