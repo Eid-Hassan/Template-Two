@@ -154,6 +154,24 @@ header nav .form i{
 }
 /*************************** End Header ************************/
 /*************************** Start Landing *************************/
+.up {
+    position: fixed;
+    bottom: 10px;
+    right: -50px;
+    background-color: #ff5722;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Tahoma;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.up.show {
+    right: 10px;
+}
 .landing{
     min-height: 100vh;
     background-color: turquoise;
