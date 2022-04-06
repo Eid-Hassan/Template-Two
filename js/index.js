@@ -33,7 +33,8 @@ span.onclick = function ()
 
 
 let tabs = document.querySelectorAll( ".tabs li" ),
-    divs = Array.from( document.querySelectorAll( ".content > div" ) );
+    divs = Array.from( document.querySelectorAll( ".content > div" ) ),
+    All = document.querySelectorAll( ".all" );
 
 tabs.forEach( ( li ) => {
     li.addEventListener( "click", function removeActive() {
@@ -46,7 +47,7 @@ tabs.forEach( ( li ) => {
         divs.forEach( ( div ) => {
             div.style.display = "none";
         } );
-        document.querySelectorAll( this.dataset.cont ).forEach( ( el ) => {
+            document.querySelectorAll( this.dataset.cont ).forEach( ( el ) => {
             el.style.display = "flex";
         } );
     } );
